@@ -1,0 +1,27 @@
+.app{
+  width: 600px;
+  background-color: aqua;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.li{
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: rgb(2, 18, 105);
+}
+.inp{
+  width: 500px;
+}
+
+.color{
+  font-weight: 900;
+  color: red;
+}
+
+/* //////////////// */
+.search input{
+  width: 400px;
+}
