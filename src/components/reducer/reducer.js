@@ -1,3 +1,4 @@
+
 export default function Reducer(state = 0, action) {
     switch (action.type) {
         case "INC":
@@ -7,6 +8,6 @@ export default function Reducer(state = 0, action) {
         case "RND":
             return state + action.value;
         default:
-            return state
+            return state;
     }
 }

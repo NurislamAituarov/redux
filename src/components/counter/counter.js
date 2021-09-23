@@ -1,21 +1,20 @@
-import { inc, dec, rnd } from "../actions/actions";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-
-const Counter = ({ counter, inc, dec, rnd }) => {
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { inc, dec, rnd } from '../actions/actions'
+const Counter = ({ dec, inc, rnd, state }) => {
     return (
         <>
-            <h1>Hello world</h1>
+            <h1>Hello</h1>
+            <button onClick={rnd}>RND</button>
             <button onClick={inc}>INC</button>
-            <button onClick={dec}>DEC</button>
-            <button onClick={rnd}>RND</button><br />
-            <span>{counter}</span>
+            <button onClick={dec}>DEC</button><br />
+            <span>{state}</span>
         </>
     )
 }
 const mapStateToProps = (state) => {
     return {
-        counter: state
+        state
     }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -25,13 +24,12 @@ const mapDispatchToProps = (dispatch) => {
         rndDispatch: rnd
     }, dispatch)
     return {
-        inc: incDispatch,
+        inc:incDispatch,
         dec: decDispatch,
         rnd: rndDispatch
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);
-
 
 
 

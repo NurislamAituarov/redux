@@ -2,21 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/app/App'
-import { createStore, bindActionCreators } from 'redux';
-import { Provider } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 import Reducer from './components/reducer/reducer';
+import MyContext from './components/test/context';
 
-// import Test from './components/test/test';
-// ReactDOM.render(<Test />, document.getElementById('root'));
+function click(){
+    console.log('Поздравляю вы нажали меня');
+}
 
-const store = createStore(Reducer);
-
+const store = createStore(Reducer)
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <MyContext.Provider value={click}>
+            <App />
+        </MyContext.Provider>
     </Provider>
     , document.getElementById('root'));
+
+
+
 
 
 
