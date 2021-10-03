@@ -1,14 +1,13 @@
 import s from './App.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Counter from '../counter/counter';
-import Test from '../test/test';
-import myContext from '../test/context';
+import Test, { Message } from '../test/test';
 
 export default function App() {
     return (
         <>
             <Counter />
-            <Test />
+            <Test render={(counter) => (<Message state={counter}/>)} />
         </>
     )
 }
