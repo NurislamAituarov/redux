@@ -11,7 +11,6 @@ import MyContext from './components/test/context';
 function click(){
     console.log('Поздравляю вы нажали меня');
 }
-
 const store = createStore(Reducer)
 ReactDOM.render(
     <Provider store={store}>
